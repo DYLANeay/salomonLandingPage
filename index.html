@@ -28,6 +28,7 @@
             <a href=""><img src="images/icons/heart.svg" alt=""></a>
             <a href=""><img src="images/icons/shopping-cart.svg" alt=""> </a>
         </div>
+        <div class="menu-toggle">☰</div>
     </header>
     <main>
         <div class="mainObject">
@@ -96,7 +97,8 @@
     <footer class="normal">
         <div class="fullLeft">
 
-            <h2>Become <br> a member</h2>
+            <h2>Become</h2>
+            <h2>a member</h2>
             <div class="buttonBox">
                 <button>
                     Learn More
@@ -128,6 +130,12 @@
         </div>
 
     </footer>
+
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".navbar").classList.toggle("active");
+        });
+    </script>
 </body>
 
 </html>

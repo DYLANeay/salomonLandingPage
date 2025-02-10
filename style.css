@@ -85,8 +85,9 @@ img {
 }
 
 header {
-    margin:2rem 6rem 2rem 2rem;
+    margin:0 auto;
     height: 15vh;
+    width:82.5vw;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -101,9 +102,10 @@ header {
     }
 
 
-    div {
+    div.logoNav {
         img {
-            width: 60%;
+            width: 15rem;
+            height:100%;
         }
     }
 
@@ -150,13 +152,14 @@ main {
         img {
             width: 50%;
             animation: text-pop-up-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
+            /* box-shadow: 10px 10px 10px 10px black; */
+            z-index: -1;
 
         }
     }
 
     div.bot {
-        margin-top: 4rem;
+        margin-top: 3rem;
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         grid-template-rows: repeat(3, 1fr);
@@ -188,8 +191,8 @@ main {
 div.gridContainer {
     padding: 2rem;
     display: grid;
-    margin-top: 3rem;
-    grid-template-columns: repeat(3, 1fr);
+    /* margin-top: 3rem; */
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     gap: 2rem;
     justify-content: center;
 
@@ -249,16 +252,17 @@ footer.normal {
 
     div.buttonBox {
         display: flex;
+        flex-direction: column;
         justify-content: start;
 
         button {
-            padding: 0.2rem;
+            padding: .4rem;
             border-radius: 16px;
             margin: 0.5rem;
-            width: 7vw;
+            width: 20vw;
             background-color: var(--backColor);
             color: var(--backColorInverted);
-
+            font-size: .8rem;
             &:hover {
                 background-color: var(--backColorInverted);
                 color: var(--backColor);
@@ -269,5 +273,100 @@ footer.normal {
 
     h5 {
         font-variation-settings: "wght" 200;
+    }
+}
+
+.menu-toggle {
+    display: none;
+
+}
+
+@media (max-width: 900px) {
+    /* Header */
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .bot{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar li {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        font-size: 3rem;
+        display: block;
+        z-index: 10001;
+    }
+
+    /* Affichage menu burger */
+    .navbar.active {
+        display: flex;
+    }
+
+    /* Grid produits */
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    footer.normal {
+        grid-template-columns: 1fr;
+        height: auto;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .buttonBox {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    button{
+        width:40vw;
+    }
+
+    div.rightIcons {
+        display: none; 
+    }
+}
+
+@media (max-width: 480px) {
+    header .rightIcons {
+        display: none !important; 
+    }
+    main{
+        height:40vh;
+    }
+
+    .menu-toggle {
+        margin-right: -10px ;
+        font-size: 1.5rem; /* Réduit légèrement la taille du menu burger */
+    }
+
+    .mainObject img {
+        width: 90%; /* Adapte la taille de l'image principale */
+    }
+
+    .bot h1 {
+        font-size: var(--fs-base); /* Réduit un peu la taille du texte principal */
     }
 }
