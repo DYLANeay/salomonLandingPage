@@ -1,8 +1,11 @@
+/* import police */
 @font-face {
     src: url("fonts/marfa-var.woff2") format("woff2-variations");
     font-family: Marfa;
 }
 
+
+/* variables css */
 :root {
     --fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
     --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
@@ -20,6 +23,7 @@
 
 }
 
+/* animations */
 @keyframes scale-in-center {
     0% {
         transform: scale(0);
@@ -68,8 +72,7 @@
     }
   }
   
-
-
+/* reset */
 * {
     margin: 0;
     padding: 0;
@@ -180,6 +183,7 @@ main {
 
         h1:nth-child(3) {
             /* align-self: center; */
+            z-index: -1;
             font-style: normal;
             grid-column: 7/11;
             font-variation-settings: "wght" 400;
@@ -208,6 +212,7 @@ div.gridContainer {
 
         h4.description,
         h4.price {
+            z-index: -1;
             font-variation-settings: "wght" 300;
             animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         }
@@ -278,9 +283,10 @@ footer.normal {
 
 .menu-toggle {
     display: none;
-
 }
 
+
+/* medium size */
 @media (max-width: 900px) {
     /* Header */
     .navbar {
@@ -349,6 +355,7 @@ footer.normal {
     }
 }
 
+/* little size */
 @media (max-width: 480px) {
     header .rightIcons {
         display: none !important; 
@@ -359,14 +366,14 @@ footer.normal {
 
     .menu-toggle {
         margin-right: -10px ;
-        font-size: 1.5rem; /* Réduit légèrement la taille du menu burger */
+        font-size: 1.5rem; 
     }
 
     .mainObject img {
-        width: 90%; /* Adapte la taille de l'image principale */
+        width: 90%; 
     }
 
     .bot h1 {
-        font-size: var(--fs-base); /* Réduit un peu la taille du texte principal */
+        font-size: var(--fs-base); 
     }
 }
